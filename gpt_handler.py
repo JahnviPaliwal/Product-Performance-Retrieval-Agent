@@ -66,7 +66,7 @@ def predict_intents_with_time(user_prompt):
     # Load model
     print("1st step")
     model, vectorizer, mlb = joblib.load("models/multi_intent_full_model.pkl")
-    print("2nd step")
+    # print("2nd step")
     # Vectorize text
     X_test = vectorizer.transform([user_prompt])
 
@@ -83,5 +83,5 @@ def predict_intents_with_time(user_prompt):
 
     # Return list of dicts
     result = [{intent: time_context} for intent in predicted_intents]
-    print("3rd step")
+    # print("3rd step")
     return result
