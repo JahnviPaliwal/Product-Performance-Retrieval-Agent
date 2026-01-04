@@ -61,7 +61,7 @@ def detect_graphical(text):
             return True
     return False
 
-
+#this is for v control
 def predict_intents_with_time(user_prompt):
     # Load model
     print("1st step")
