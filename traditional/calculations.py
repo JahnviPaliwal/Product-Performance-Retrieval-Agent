@@ -2,15 +2,53 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objs as go
 from statsmodels.tsa.arima.model import ARIMA
+# from Analytic_board.analysis
 
 # --- NPS Calculation ---
+
+
+def calculate_data_for_num(data, category_column, rating_column, category):
+    df_filtered = data[data[category_column] == category]
+    short_df = (
+        df_filtered[[category_column, rating_column]]  # name
+        .dropna(subset=[category_column, rating_column])
+        .groupby([category_column], as_index=False)
+        .agg(avg_review_rating=(rating_column, 'mean'),
+             count_rating_1=(rating_column, lambda x: (x == 1).sum()),
+             count_rating_5=(rating_column, lambda x: (x == 5).sum())
+             ).reset_index().sort_values([category_column, 'avg_review_rating'], ascending=[True, False]))
+    return short_df
+
 def calculate_nps(data, category_column, rating_column, category):
-    category_data = data[data[category_column] == category]
-    if len(category_data) == 0: return None
-    promoters = category_data[category_data[rating_column] >= 9]
-    detractors = category_data[category_data[rating_column] <= 6]
-    nps_score = (len(promoters) - len(detractors)) / len(category_data) * 100
+    n_data = calculate_data_for_num(data, category_column, rating_column, category)
+    # print(n_data.head())
+    # category_data = data[data[category_column] == category]
+    # if len(n_data) == 0:
+    #     print("None hora hai")
+    #     return None
+    df = n_data[n_data[category_column] == category]
+
+    def nps_label(rating):
+        if rating >= 4:
+            return 'Promoter'
+        elif rating <= 2:
+            return 'Detractor'
+        else:
+            return 'Passive'
+    print("some")
+    df['nps_label'] = df['avg_review_rating'].apply(nps_label(3))
+
+    total = len(df)
+    # print(df.head())
+    # if total == 0:
+    #     return 0
+    nps_score = (
+                        (df['nps_label'] == 'Promoter').sum() -
+                        (df['nps_label'] == 'Detractor').sum()
+                )# / total * 100
+    print(f"the nps_score is:{nps_score}")
     return nps_score
+
 
 def get_best_product(data, category_column, rating_column, category):
     print("last")

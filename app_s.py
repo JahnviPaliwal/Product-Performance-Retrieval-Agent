@@ -84,9 +84,9 @@ if mode == "Traditional Analytics (No LLM)":
 
     st.info("🔍 Running deterministic, planner-based analytics (no OpenAI)")
 
-    from column_mapper import normalize_columns
-    from prompt_parser import parse_prompt_local
-    from prompt_handler import process_plan
+    from traditional.column_mapper import normalize_columns
+    from traditional.prompt_parser import parse_prompt_local
+    from traditional.prompt_handler import process_plan
 
     column_map = normalize_columns(df)
     st.subheader("Detected Column Mapping")
