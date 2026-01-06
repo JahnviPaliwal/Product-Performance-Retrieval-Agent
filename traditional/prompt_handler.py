@@ -27,6 +27,7 @@ def process_plan(plan, df):
     for action in plan.get("actions", []):
         action_type = action["type"]
         category = action.get("category")
+        print(f"The category reached in function : {category} as well as the action type reached : {action_type}")
         months = action.get("months", 3)
 
         if action_type == "GET_NPS":
@@ -34,7 +35,9 @@ def process_plan(plan, df):
                 df, category_col, rating_col, category
             )
 
-        elif action_type == "GET_BEST_PRODUCT" and product_col:
+        elif action_type == "GET_BEST_PRODUCT":
+            print("3")
+            print(f" detected category_coloumn_name : {category_col}, rating_coloumn_name:{rating_col}, Name of the category:{category}")
             results["best_product"] = get_best_product(
                 df, category_col, rating_col, category
             )

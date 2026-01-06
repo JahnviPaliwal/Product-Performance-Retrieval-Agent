@@ -13,9 +13,14 @@ def calculate_nps(data, category_column, rating_column, category):
     return nps_score
 
 def get_best_product(data, category_column, rating_column, category):
+    print("last")
     category_data = data[data[category_column] == category]
-    if len(category_data) == 0: return None
+    print(f"{category_data}\n")
+    if len(category_data) == 0:
+        print("None hora h")
+        return None
     best_product = category_data.loc[category_data[rating_column].idxmax()]["Product Name"]
+    print(f"maybe some details about best product:{best_product}")
     return best_product
 
 def get_worst_product(data, category_column, rating_column, category):

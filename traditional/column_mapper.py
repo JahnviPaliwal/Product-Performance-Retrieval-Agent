@@ -3,7 +3,7 @@ def normalize_columns(df):
     Normalize column names for flexible CSV support.
     """
     normalized = {}
-
+    print("4")
     for col in df.columns:
         col_clean = col.strip().lower()
         if (

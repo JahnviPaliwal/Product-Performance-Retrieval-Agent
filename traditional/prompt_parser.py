@@ -27,6 +27,7 @@ def parse_prompt_local(prompt: str):
 
     category = None
     match = re.search(r"category\s+([a-zA-Z0-9\s]+)", prompt_lower)
+
     if match:
         category = match.group(1).strip().title()
 
@@ -50,6 +51,7 @@ def parse_prompt_local(prompt: str):
             "category": category,
             "months": None
         })
+        print("2")
 
     if "worst" in prompt_lower:
         plan["actions"].append({
