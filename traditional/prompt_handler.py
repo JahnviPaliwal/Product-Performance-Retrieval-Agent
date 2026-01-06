@@ -1,11 +1,11 @@
-from calculations import (
+from traditional.calculations import (
     calculate_nps,
     get_best_product,
     get_worst_product,
     generate_full_report,
     generate_future_graphs
 )
-from column_mapper import normalize_columns
+from traditional.column_mapper import normalize_columns
 
 
 def process_plan(plan, df):

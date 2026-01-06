@@ -1,10 +1,8 @@
 import streamlit as st
-import pandas as pd
-from analysis import calculate_nps, get_best_product, get_worst_product, generate_full_report
-from gpt_handler import *
-from future_board import forecast_nps, generate_future_graphs
-from io import StringIO
-from utils import *
+from Analytic_board.analysis import calculate_nps
+from Analytic_board.gpt_handler import *
+from Analytic_board.future_board import forecast_nps
+from Analytic_board.utils import *
 
 # Streamlit interface
 st.title("AI-Powered Product Insights")
