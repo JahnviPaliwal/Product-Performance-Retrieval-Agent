@@ -1,6 +1,5 @@
-streamlit==1.10.0
-pandas==1.5.0
-openai==0.27.0
-statsmodels
-plotly==5.3.1
-matplotlib==3.5.1
+streamlit
+pandas
+openpyxl
+groq
+numpy
