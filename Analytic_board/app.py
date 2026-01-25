@@ -33,7 +33,7 @@ if file and user_input:
             if timeline == 'present':
                 calculate_nps()
             else:
-                date_cl, review_cl = components_of_file(data)
+                date_cl, review_cl = (data)
                 fututre_nps = forecast_nps(data,date_cl, review_cl)
                 st.write(f"The future nps score can be: {fututre_nps}")
 
