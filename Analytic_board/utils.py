@@ -18,6 +18,29 @@ def dict_category(keys):
         print('graphical')
         return 'graphical'
 
+def present_analysis(Category, product):
+    if Category == "Summary":
+        summary_present = present_summary_details(product)
+    elif Category == "Best Product":
+        Best_product = Calculate_best_products(product)
+    elif Category == "Worst Product":
+        Worst_product = Calculate_worst_products(product)
+    elif Category == "Trend Analysis":
+        Trend_image = Graphs_for_product(product)
+    elif Category == "NPS_CALCULATION":
+        nps_product = Calculate_nps_products(product)
+
+
+def Future_funcs((Category, product):)
+
+
+def Func_def(a):
+    if a[1] == "Present":
+        present_analysis_values = present_analysis(a[0], a[2])
+        return present_analysis_values
+    else:
+        future_analysis_values = Future_funcs(a[0], a[2], a[3])
+        return future_analysis_values
 
 def dict_values(values):
     if values == 'present':

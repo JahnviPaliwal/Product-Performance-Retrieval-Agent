@@ -46,6 +46,15 @@
 
 import streamlit as st
 import pandas as pd
+import os
+from groq import Groq
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
+MODEL = "llama-3.1-8b-instant"
 
 # ------------------ PAGE CONFIG ------------------
 st.set_page_config(page_title="Agentic AI Analytics Platform", layout="wide")
@@ -140,16 +149,16 @@ elif mode == "RAG + OpenAI Analytics":
 
             from rag_agent.analytics import compute_metrics
             from rag_agent.forecasting import run_forecast
-            from rag_agent.rag import generate_rag_answer
+            from rag_agent.rag import build_rag_answer
 
             # --- Structured Analytics ---
             metrics = compute_metrics(df)
 
             # --- Forecasting ---
-            forecast = run_forecast(df)
+            # forecast = run_forecast(df)
 
             # --- RAG + LLM ---
-            ai_response = generate_rag_answer(
+            ai_response = build_rag_answer(
                 df=df,
                 prompt=user_prompt,
                 api_key=openai_key,
