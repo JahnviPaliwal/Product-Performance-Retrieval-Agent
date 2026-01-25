@@ -1,9 +1,6 @@
 
 # Product Performance Retrival Agent  
 
-
-
-
 ## Project Overview
 
 This project is an AI-powered analytical agent that allows users to explore **Excel or CSV datasets** effortlessly. It combines **LLM reasoning** with **deterministic Python analysis** to provide:
@@ -73,7 +70,7 @@ The system is **safe, token-efficient, explainable**, and ideal for non-technica
 * Adaptive insights: recommendations adjust to each dataset.
 * Session-aware: prevents stale outputs if a new file is uploaded.
 * Demo-ready: recruiters can see the system in under five minutes.
-
+   <img width="644" height="719" alt="Image" src="https://github.com/user-attachments/assets/d7bd82eb-3afe-4287-bbf3-ddb295b0c72d" />
 ---
 
 ## Installation & Usage
