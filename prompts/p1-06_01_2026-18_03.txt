@@ -1,5 +1,0 @@
-Give me a summary of this dataset
-Plot revenue over time
-Which date had the highest sales?
-Explain the meaning of each column
-Find trends and anomalies
