@@ -49,7 +49,7 @@ JSON format:
 
 
     if parsed is None:
-        # 🚨 FAIL-SAFE FALLBACK (agent never crashes)
+    
         return [
             {
                 "title": "Dataset structure overview",
