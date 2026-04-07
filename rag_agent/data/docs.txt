@@ -1,0 +1,19 @@
+Acme Corporation was founded in 2015 and has grown to over 200 employees across five departments: Engineering, Marketing, Finance, HR, and Product.
+
+The Engineering department is the largest team, responsible for building and maintaining all software products. They follow agile methodology with two-week sprints.
+
+Acme's remote work policy allows all employees in Engineering, Marketing, and Product to work fully remotely. Finance and HR staff are expected to be on-site at least three days per week.
+
+The company offers a comprehensive benefits package including health insurance, 401k matching up to 5%, 20 days of paid vacation, and an annual learning budget of $2,000 per employee.
+
+Performance reviews are held twice a year in June and December. Salary adjustments and bonuses are tied to these reviews. The average company-wide bonus last year was 8% of annual salary.
+
+The Product team works closely with Engineering and interfaces with all client-facing departments. The team uses Jira for project management and Figma for design work.
+
+Acme's marketing strategy focuses primarily on content marketing and SEO. The team publishes three blog posts per week and manages social media channels across LinkedIn, Twitter, and YouTube.
+
+The Finance department manages budgeting, payroll, and investor relations. Acme completed a Series B funding round of $25 million in 2022, led by Venture Capital Partners.
+
+In 2023, Acme launched its flagship SaaS product "InsightPro", which uses AI to provide business intelligence dashboards. The product now has over 500 enterprise customers.
+
+Employee satisfaction scores from the 2024 survey showed 87% of employees are satisfied or very satisfied with their work environment. The main areas for improvement noted were internal communication tools and career development pathways.
