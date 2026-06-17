@@ -154,7 +154,7 @@ def _general_answer(query: str, api_key: str) -> str:
         system=(
             "You are a knowledgeable business intelligence assistant. "
             "Answer the user's question using your general knowledge. "
-            "Be accurate, clear, and comprehensive."
+            "Be accurate, clear, and comprehensive. Give a response in a maximum of 20 words."
         ),
         human=query,
     )
