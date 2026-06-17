@@ -1,114 +1,100 @@
+# BI RAG Assistant
 
-# Product Performance Retrival Agent  
+A **Business Intelligence + Multi-Document RAG Assistant** built with Flask, LangGraph, and Groq.
 
-## Project Overview
+## Features
 
-This project is an AI-powered analytical agent that allows users to explore **Excel or CSV datasets** effortlessly. It combines **LLM reasoning** with **deterministic Python analysis** to provide:
+- Upload PDF, CSV, PPTX, DOCX, TXT documents
+- RAG pipeline with FAISS vector store (in-memory, no persistence)
+- LangGraph agent automatically routes to:
+  - **Document Mode** – answers grounded in uploaded files
+  - **Analytics Mode** – statistical analysis + auto-generated charts from CSV
+  - **General Mode** – LLM general knowledge (with ⚠️ notice)
+- Auto-generates 4 follow-up questions after every response
+- Business intelligence: summaries, SWOT, risk analysis, KPI extraction
+- Chart generation: bar, line, pie, scatter, histogram, heatmap
+- Clean light-theme dashboard UI
 
-* Automatic insight recommendations (6 per dataset)
-* Data quality scoring (0–100)
-* Auto-generated charts and visualizations
-* Interactive follow-up Q&A on results
+## Setup
 
-The system is **safe, token-efficient, explainable**, and ideal for non-technical users to explore data intelligently.
+### 1. Clone / extract the project
 
----
+```bash
+cd bi_rag_assistant
+```
 
-## Key Features
+### 2. Create virtual environment
 
-1. Upload Excel / CSV files.
-2. Dynamic insight recommendations based on dataset metadata.
-3. Deterministic analysis ensures reproducible results.
-4. Automatic visualization for each insight.
-5. Data quality scoring: missing data, outliers, duplicates.
-6. Follow-up Q&A to interactively explore insights.
-7. Secure API usage: users provide their own Groq API key.
+```bash
+python -m venv venv
+source venv/bin/activate       # Linux/macOS
+# or: venv\Scripts\activate    # Windows
+```
 
----
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the app
+
+```bash
+python app.py
+```
+
+Open `http://localhost:5000` in your browser.
+
+### 5. Enter your Groq API key
+
+Paste your Groq API key (starts with `gsk_`) in the top-right input field.  
+Get one free at https://console.groq.com
 
 ## Architecture
 
-**Workflow:**
-
-1. User Interface (Streamlit) – upload file and API key.
-2. Dataset Profiler – extracts metadata (columns, types, missing values, cardinality).
-3. LLM Reasoning Layer (Groq) – recommends insights.
-4. Insight Router – maps suggestions to deterministic Python functions.
-5. Analysis Layer – executes analysis (distribution, outliers, correlations, missing data).
-6. Visualization Layer – auto-generates charts.
-7. Data Quality Layer – computes composite score.
----
-
-## Tech Stack
-
-| Layer                   | Technology                               |
-| ----------------------- | ---------------------------------------- |
-| Frontend/UI             | Streamlit                                |
-| Data Loading & Analysis | Python, Pandas, NumPy                    |
-| LLM Reasoning           | Groq API, LLaMA 3.1                      |
-| Visualization           | Streamlit charts                         |
-| Security                | User-provided API key, local computation |
-| Version Control         | Git                                      |
-
----
-
-## How It Works
-
-1. Upload Excel or CSV file.
-2. Enter your Groq API key in the frontend.
-3. The system extracts metadata and sends it to the LLM.
-4. LLM returns six insight recommendations.
-5. Click a recommendation → system executes analysis locally.
-6. Visualizations and metrics are displayed.
-7. Ask follow-up questions to explore insights further.
-
----
-
-## Highlights
-
-* Safe AI usage: LLM guides decisions; computations are local.
-* Adaptive insights: recommendations adjust to each dataset.
-* Session-aware: prevents stale outputs if a new file is uploaded.
-* Demo-ready: recruiters can see the system in under five minutes.
-   <img width="644" height="719" alt="Image" src="https://github.com/user-attachments/assets/d7bd82eb-3afe-4287-bbf3-ddb295b0c72d" />
----
-
-## Installation & Usage
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/ai_excel_agent.git
-cd ai_excel_agent
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run Streamlit app
-streamlit run app.py
+```
+bi_rag_assistant/
+├── app.py                        # Flask entry point
+├── routes/
+│   ├── chat.py                   # /api/chat, /api/documents
+│   ├── upload.py                 # /api/upload, DELETE /api/documents/<id>
+│   └── analytics.py              # /api/analytics/<id>
+├── services/
+│   └── agent.py                  # LangGraph agent (classify→retrieve→answer→followups)
+├── rag/
+│   ├── ingestion.py              # parse → chunk → embed → store
+│   ├── chunker.py                # RecursiveCharacterTextSplitter
+│   └── vector_store.py           # FAISS in-memory per-document
+├── document_processors/
+│   ├── dispatcher.py             # Route by extension
+│   ├── pdf_processor.py          # pypdf
+│   ├── csv_processor.py          # pandas
+│   ├── pptx_processor.py         # python-pptx
+│   ├── docx_processor.py         # python-docx
+│   └── txt_processor.py          # plain text
+├── analytics/
+│   ├── analysis_engine.py        # stats: distribution, outliers, correlations, etc.
+│   └── chart_generator.py        # matplotlib charts → base64 PNG
+├── utils/
+│   └── session_store.py          # In-memory doc registry (no DB)
+├── templates/
+│   └── index.html
+├── static/
+│   ├── css/style.css
+│   └── js/app.js
+└── uploads/                      # Temp file storage (session only)
 ```
 
-* Upload your file and enter your **Groq API key**.
-* Click on recommended insights to see results.
+## Key Design Decisions
 
----
+- **No database**: all state is in-memory Python dicts; cleared on server restart
+- **Session-scoped**: uploading a file stores it in `uploads/` and its embeddings in RAM
+- **Irrelevant query handling**: the LangGraph classifier detects off-topic questions and adds a visible ⚠️ notice before answering from general knowledge
+- **Model**: `llama-3.3-70b-versatile` via Groq API
+- **Embeddings**: `all-MiniLM-L6-v2` via sentence-transformers (runs locally, no API cost)
 
-## Live Demo
+## Data Privacy
 
-Try the AI Agent online:
-
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://jd-data-retrieval-agent.streamlit.app/)
-
-* Upload Excel or CSV files
-* Enter your Groq API key
-* Get instant insight recommendations, charts, and data quality scores
-* Interact with follow-up Q&A
-
----
-
-## Target Users
-
-* Data Analysts who want fast automated insights
-* Non-technical professionals exploring datasets
-* Recruiters & demo evaluators looking for AI-powered solutions for recruiters.
-
-
+- Files are saved only to the `uploads/` folder during the server session
+- Deleting a document removes the file from disk AND its embeddings from memory
+- No data is sent to external services except the Groq LLM API (query + retrieved chunks)
