@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BI RAG Assistant</title>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon">📊</span>
+      <span class="logo-text">BI RAG Assistant</span>
+    </div>
+    <div class="header-right">
+      <div class="api-key-wrap">
+        <label for="apiKeyInput">Groq API Key</label>
+        <input type="password" id="apiKeyInput" placeholder="gsk_..." autocomplete="off"/>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Layout ── -->
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <!-- Upload Section -->
+    <section class="panel upload-panel">
+      <h3 class="panel-title">📁 Upload Documents</h3>
+      <div id="dropZone" class="drop-zone">
+        <div class="drop-icon">⬆️</div>
+        <p>Drag & drop or click to upload</p>
+        <p class="drop-hint">PDF · CSV · PPTX · DOCX · TXT</p>
+        <input type="file" id="fileInput" accept=".pdf,.csv,.pptx,.docx,.txt" multiple hidden/>
+      </div>
+      <div id="uploadProgress" class="upload-progress hidden">
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <span id="uploadStatus">Uploading…</span>
+      </div>
+    </section>
+
+    <!-- Document List -->
+    <section class="panel docs-panel">
+      <div class="docs-panel-header">
+        <h3 class="panel-title">📄 Documents <span id="docCount" class="badge">0</span></h3>
+        <button id="clearAllBtn" class="btn-clear-all" onclick="clearAllDocuments()" title="Delete all documents">🗑️ Clear All</button>
+      </div>
+      <ul id="docList" class="doc-list">
+        <li class="doc-empty">No documents uploaded yet.</li>
+      </ul>
+    </section>
+
+    <!-- Suggested Questions -->
+    <section class="panel suggestions-panel">
+      <h3 class="panel-title">💡 Suggested Questions</h3>
+      <ul id="suggestionsList" class="suggestions-list">
+        <li class="suggestion-item" data-q="Summarize the key findings in this document.">Summarize the key findings</li>
+        <li class="suggestion-item" data-q="What are the main risks mentioned?">What are the main risks?</li>
+        <li class="suggestion-item" data-q="What KPIs or metrics are highlighted?">What KPIs are highlighted?</li>
+        <li class="suggestion-item" data-q="Give me a SWOT analysis based on this data.">SWOT analysis</li>
+        <li class="suggestion-item" data-q="What are the top 3 strategic recommendations?">Strategic recommendations</li>
+      </ul>
+    </section>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main">
+
+    <!-- Chat -->
+    <section class="chat-section">
+      <div id="chatMessages" class="chat-messages">
+        <div class="welcome-msg">
+          <div class="welcome-icon">🤖</div>
+          <h2>Business Intelligence Assistant</h2>
+          <p>Upload documents and ask me anything — I'll answer from your documents or general knowledge.</p>
+          <p class="welcome-note">📌 Your uploaded documents are saved persistently — they'll be here even after the server restarts.</p>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <textarea id="chatInput" placeholder="Ask a question about your documents…" rows="2"></textarea>
+        <button id="sendBtn" class="btn-primary" onclick="sendMessage()">
+          <span class="btn-icon">➤</span> Ask
+        </button>
+      </div>
+    </section>
+
+    <!-- Charts Panel (shown when analytics mode fires) -->
+    <section id="chartsPanel" class="panel charts-panel hidden">
+      <h3 class="panel-title">📈 Analytics Charts</h3>
+      <div id="chartsGrid" class="charts-grid"></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Loading overlay -->
+<div id="loadingOverlay" class="loading-overlay hidden">
+  <div class="spinner"></div>
+  <p id="loadingMsg">Thinking…</p>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
