@@ -1,4 +1,4 @@
-# Product Performance Retrieval & Analytics Agent
+# Product Performance Retrieval Agent
 
 An AI-powered data analytics assistant that combines **LLM planning** (Groq LLaMA 3.1) with **deterministic Python computation** (Pandas, NumPy, Matplotlib) and **semantic vector retrieval** (Sentence-Transformers + FAISS) to explore CSV and Excel datasets safely, reproducibly, and explainably.
 
@@ -176,7 +176,7 @@ ruff check .
 
 ## Screenshots & Live Demo
 
-- **Live Demo:** `[Deploy on Streamlit Community Cloud](https://your-app-url.streamlit.app)`
+- **Live Demo:** https://appuct-performance-retrieval-agent-8ekterarmgqeectguje4wl.streamlit.app/
 - **UI Screenshot:**
 <img width="1902" height="806" alt="image" src="https://github.com/user-attachments/assets/9bb6046a-b646-45b6-9406-66f6313e664c" />
 
