@@ -178,7 +178,8 @@ ruff check .
 
 - **Live Demo:** `[Deploy on Streamlit Community Cloud](https://your-app-url.streamlit.app)`
 - **UI Screenshot:**
-  ![Dashboard Screenshot Placeholder](docs/screenshots/dashboard_placeholder.png)
+<img width="1902" height="806" alt="image" src="https://github.com/user-attachments/assets/9bb6046a-b646-45b6-9406-66f6313e664c" />
+
 
 ---
 
