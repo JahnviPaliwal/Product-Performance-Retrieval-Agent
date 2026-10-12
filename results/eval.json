@@ -1,0 +1,324 @@
+{
+  "timestamp": "2026-10-12T12:53:50Z",
+  "total_test_cases": 24,
+  "correct_predictions": 24,
+  "overall_accuracy": 1.0,
+  "average_latency_ms": 0.02,
+  "failure_breakdown": {},
+  "per_insight_metrics": {
+    "categorical_patterns": {
+      "true_positives": 6,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "distribution": {
+      "true_positives": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "missing_data": {
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "outliers": {
+      "true_positives": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "relationships": {
+      "true_positives": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "schema": {
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  },
+  "detailed_results": [
+    {
+      "id": 1,
+      "dataset": "ecommerce_sales.csv",
+      "question": "What is the average, median, and range of unit prices across products?",
+      "expected_route": "distribution",
+      "predicted_route": "distribution",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.09,
+      "needs_human_review": true
+    },
+    {
+      "id": 2,
+      "dataset": "ecommerce_sales.csv",
+      "question": "Are there any missing discount rates or unrecorded shipping costs in the orders?",
+      "expected_route": "missing_data",
+      "predicted_route": "missing_data",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 3,
+      "dataset": "ecommerce_sales.csv",
+      "question": "Which product categories represent the highest transaction frequency?",
+      "expected_route": "categorical_patterns",
+      "predicted_route": "categorical_patterns",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 4,
+      "dataset": "ecommerce_sales.csv",
+      "question": "Is there a linear correlation between quantity purchased and shipping cost?",
+      "expected_route": "relationships",
+      "predicted_route": "relationships",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 5,
+      "dataset": "ecommerce_sales.csv",
+      "question": "Are there extreme transaction prices that look like pricing anomalies or luxury outliers?",
+      "expected_route": "outliers",
+      "predicted_route": "outliers",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 6,
+      "dataset": "ecommerce_sales.csv",
+      "question": "What are the data types and column structures defined in this e-commerce table?",
+      "expected_route": "schema",
+      "predicted_route": "schema",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 7,
+      "dataset": "ecommerce_sales.csv",
+      "question": "Show the descriptive statistics and spread of order discount rates.",
+      "expected_route": "distribution",
+      "predicted_route": "distribution",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 8,
+      "dataset": "ecommerce_sales.csv",
+      "question": "What are the most popular payment methods used by customers?",
+      "expected_route": "categorical_patterns",
+      "predicted_route": "categorical_patterns",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 9,
+      "dataset": "customer_churn.csv",
+      "question": "What is the statistical distribution and spread of customer tenure in months?",
+      "expected_route": "distribution",
+      "predicted_route": "distribution",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 10,
+      "dataset": "customer_churn.csv",
+      "question": "Check if total charges contain null or blank values for recent customer accounts.",
+      "expected_route": "missing_data",
+      "predicted_route": "missing_data",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 11,
+      "dataset": "customer_churn.csv",
+      "question": "What are the most frequent contract types signed by customers?",
+      "expected_route": "categorical_patterns",
+      "predicted_route": "categorical_patterns",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 12,
+      "dataset": "customer_churn.csv",
+      "question": "Do higher monthly charges correlate with higher total charges or longer tenure?",
+      "expected_route": "relationships",
+      "predicted_route": "relationships",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 13,
+      "dataset": "customer_churn.csv",
+      "question": "Find customer bills with unusually high monthly charges that deviate as statistical outliers.",
+      "expected_route": "outliers",
+      "predicted_route": "outliers",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 14,
+      "dataset": "customer_churn.csv",
+      "question": "Inspect the table schema to check whether churn is stored as a boolean or object string.",
+      "expected_route": "schema",
+      "predicted_route": "schema",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 15,
+      "dataset": "customer_churn.csv",
+      "question": "What is the breakdown of paperless billing and customer gender frequencies?",
+      "expected_route": "categorical_patterns",
+      "predicted_route": "categorical_patterns",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 16,
+      "dataset": "customer_churn.csv",
+      "question": "Examine the correlation coefficient matrix between tenure and charges.",
+      "expected_route": "relationships",
+      "predicted_route": "relationships",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 17,
+      "dataset": "employee_attrition.csv",
+      "question": "What is the distribution, standard deviation, and quartile summary of monthly incomes?",
+      "expected_route": "distribution",
+      "predicted_route": "distribution",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 18,
+      "dataset": "employee_attrition.csv",
+      "question": "Are there missing or unrecorded entries in the performance rating column?",
+      "expected_route": "missing_data",
+      "predicted_route": "missing_data",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 19,
+      "dataset": "employee_attrition.csv",
+      "question": "Which company departments have the highest count of employees?",
+      "expected_route": "categorical_patterns",
+      "predicted_route": "categorical_patterns",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 20,
+      "dataset": "employee_attrition.csv",
+      "question": "Does employee monthly income correlate with the number of years spent at the company?",
+      "expected_route": "relationships",
+      "predicted_route": "relationships",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.02,
+      "needs_human_review": true
+    },
+    {
+      "id": 21,
+      "dataset": "employee_attrition.csv",
+      "question": "Identify executive compensation outliers exceeding the standard IQR wage threshold.",
+      "expected_route": "outliers",
+      "predicted_route": "outliers",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 22,
+      "dataset": "employee_attrition.csv",
+      "question": "Display the schema definitions, column data types, and non-null totals for the HR dataset.",
+      "expected_route": "schema",
+      "predicted_route": "schema",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.0,
+      "needs_human_review": true
+    },
+    {
+      "id": 23,
+      "dataset": "employee_attrition.csv",
+      "question": "Show the count breakdown of most common job roles across the organization.",
+      "expected_route": "categorical_patterns",
+      "predicted_route": "categorical_patterns",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    },
+    {
+      "id": 24,
+      "dataset": "employee_attrition.csv",
+      "question": "Detect any anomalous outlier values in years at company.",
+      "expected_route": "outliers",
+      "predicted_route": "outliers",
+      "correct": true,
+      "failure_reason": null,
+      "latency_ms": 0.01,
+      "needs_human_review": true
+    }
+  ]
+}

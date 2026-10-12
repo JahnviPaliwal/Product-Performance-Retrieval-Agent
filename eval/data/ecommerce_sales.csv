@@ -1,0 +1,21 @@
+order_id,customer_id,product_category,quantity,unit_price,discount_rate,shipping_cost,order_status,payment_method
+1001,C_501,Electronics,2,299.99,0.05,12.50,Delivered,Credit Card
+1002,C_502,Home & Kitchen,1,45.00,0.00,5.00,Delivered,PayPal
+1003,C_503,Apparel,4,19.99,0.15,4.50,Shipped,Debit Card
+1004,C_504,Electronics,1,1200.00,0.10,25.00,Delivered,Credit Card
+1005,C_505,Books,3,12.50,0.00,3.50,Delivered,Gift Card
+1006,C_506,Electronics,1,8500.00,0.20,50.00,Processing,Credit Card
+1007,C_507,Apparel,2,34.50,0.00,5.00,Delivered,PayPal
+1008,C_508,Beauty,1,28.00,,4.00,Delivered,Credit Card
+1009,C_509,Home & Kitchen,5,15.00,0.10,8.00,Cancelled,Debit Card
+1010,C_510,Electronics,2,150.00,0.05,10.00,Delivered,Credit Card
+1011,C_511,Apparel,3,45.00,0.00,6.00,Delivered,Credit Card
+1012,C_512,Books,1,22.00,,3.50,Shipped,PayPal
+1013,C_513,Sports,2,85.00,0.10,12.00,Delivered,Credit Card
+1014,C_514,Beauty,1,65.00,0.00,4.50,Delivered,Credit Card
+1015,C_515,Electronics,1,450.00,0.05,15.00,Delivered,Debit Card
+1015,C_515,Electronics,1,450.00,0.05,15.00,Delivered,Debit Card
+1016,C_516,Home & Kitchen,2,75.00,0.00,8.50,Processing,PayPal
+1017,C_517,Sports,1,195.00,0.15,18.00,Delivered,Credit Card
+1018,C_518,Books,4,14.00,0.05,4.00,Delivered,Gift Card
+1019,C_519,Apparel,2,55.00,,6.50,Delivered,Credit Card

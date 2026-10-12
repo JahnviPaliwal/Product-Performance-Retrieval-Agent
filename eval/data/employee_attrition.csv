@@ -1,0 +1,21 @@
+employee_id,department,job_role,monthly_income,years_at_company,job_satisfaction,performance_rating,overtime,attrition
+E_01,Sales,Sales Executive,5500,4,3,3,Yes,No
+E_02,Research & Development,Research Scientist,3200,2,2,3,Yes,Yes
+E_03,Research & Development,Laboratory Technician,2800,1,4,3,No,Yes
+E_04,Sales,Sales Representative,2100,1,1,,No,Yes
+E_05,Human Resources,HR Specialist,4500,5,3,3,No,No
+E_06,Research & Development,Manufacturing Director,12500,12,4,4,No,No
+E_07,Sales,Sales Executive,6200,6,2,3,Yes,No
+E_08,Research & Development,Healthcare Representative,7800,8,3,3,No,No
+E_09,Human Resources,Manager,16500,15,4,4,No,No
+E_10,Research & Development,Research Scientist,3400,3,1,3,Yes,Yes
+E_11,Sales,Sales Executive,5900,5,3,3,No,No
+E_12,Research & Development,Senior Developer,9800,9,4,3,No,No
+E_13,Sales,Sales Representative,2300,1,2,,Yes,Yes
+E_14,Research & Development,Laboratory Technician,2900,2,3,3,No,No
+E_15,Research & Development,Research Director,19500,20,4,4,No,No
+E_16,Sales,Sales Executive,6100,7,2,3,No,No
+E_17,Human Resources,HR Specialist,4800,4,3,3,Yes,No
+E_18,Research & Development,Manager,17200,14,3,4,No,No
+E_19,Sales,Sales Representative,2200,1,1,3,Yes,Yes
+E_20,Research & Development,Research Scientist,3600,3,4,3,No,No

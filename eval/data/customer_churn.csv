@@ -1,0 +1,21 @@
+customer_id,gender,tenure_months,contract_type,paperless_billing,monthly_charges,total_charges,churn
+U_101,Female,12,Month-to-month,Yes,65.50,786.00,No
+U_102,Male,34,One year,No,45.20,1536.80,No
+U_103,Male,2,Month-to-month,Yes,89.90,179.80,Yes
+U_104,Female,60,Two year,No,110.00,6600.00,No
+U_105,Female,5,Month-to-month,Yes,72.40,362.00,Yes
+U_106,Male,1,Month-to-month,Yes,95.00,,Yes
+U_107,Male,48,Two year,No,25.30,1214.40,No
+U_108,Female,18,One year,Yes,55.80,1004.40,No
+U_109,Male,7,Month-to-month,No,82.10,574.70,Yes
+U_110,Female,71,Two year,No,115.50,8200.50,No
+U_111,Male,3,Month-to-month,Yes,69.90,209.70,Yes
+U_112,Female,24,One year,Yes,78.20,1876.80,No
+U_113,Male,40,Two year,No,30.00,1200.00,No
+U_114,Female,9,Month-to-month,Yes,99.50,895.50,Yes
+U_115,Male,15,One year,Yes,62.00,930.00,No
+U_116,Female,55,Two year,No,105.00,5775.00,No
+U_117,Male,4,Month-to-month,Yes,88.40,,Yes
+U_118,Female,30,One year,No,50.10,1503.00,No
+U_119,Male,22,Month-to-month,Yes,91.20,2006.40,No
+U_120,Female,64,Two year,No,112.80,7219.20,No
